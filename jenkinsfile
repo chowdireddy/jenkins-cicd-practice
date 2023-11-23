@@ -4,12 +4,12 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/chowdireddy/Jenkins-Zero-To-Hero.git'
+        git branch: 'master', url: 'https://github.com/chowdireddy/jenkins-cicd-practice.git'
       }
     }
     stage('Build and Test') {
       steps {
-      sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
+      sh 'mvn clean package'
       }
     }
    }
